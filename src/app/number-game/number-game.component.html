@@ -1,0 +1,39 @@
+<div style="margin-left: 450px; padding-bottom: 20px;">
+    <div class="card" style="width: 60%; border-radius: 10px; border: 1px solid grey; margin-top: 20px;  padding-bottom: 10px; background-color: white;">
+        <h5  style="text-align: center; background-color: red; color: white;" *ngIf="isError">{{ message}}</h5>
+        <h3 style="text-align: center;">Enter Integer Number Range</h3>
+        <div class="row" style="margin: 10px;">
+            <div class="col-md-4">
+                <label for="startNumber">Start Number</label>
+                <input type="number" [(ngModel)]="startNumber" name="startNumber" placeholder="Enter Start No" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="endNumber">End Number</label>
+                <input type="number" [(ngModel)]="endNumber" name="endNumber" placeholder="Enter End No" class="form-control">
+            </div>
+            <div class="col-md-2">
+                <button style="margin-top: 25px;" type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+            </div>
+            <div class="col-md-2">
+                <button style="margin-top: 25px;" type="submit" class="btn btn-info" (click)="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="text-align: center;  background-color: rgb(91, 197, 247);">
+    <h3>Results</h3>
+    <table class="table table-hover" style="width: 50%;  background-color: white; margin-left: 370px;">
+        <thead>
+          <tr>
+            <th style="text-align: center;">#</th>
+            <th style="text-align: center;">Text</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let numRange of range">
+            <td>{{ numRange.number}}</td>
+            <td>{{ numRange.text}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
