@@ -123,7 +123,7 @@ export const QuizDataSource =  [
             ],
             correctAns: {   
                 id: 15,
-                text: 'Gaborone' 
+                text: 'Lilongwe' 
             }
         }
     ]
